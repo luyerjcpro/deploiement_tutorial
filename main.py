@@ -6,8 +6,8 @@ import pandas as pd
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
-from database import get_session
-from models import Penguin, Prediction
+from database import engine, get_session
+from models import Base, Penguin, Prediction
 from schemas import PenguinIn, PenguinOut, PredictionOut
 
 MODELE_PATH = "modele.joblib"
@@ -18,6 +18,7 @@ SessionDep = Annotated[Session, Depends(get_session)]
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    Base.metadata.create_all(engine)
     ressources["modele"] = joblib.load(MODELE_PATH)
     yield
     ressources.clear()
