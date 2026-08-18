@@ -1,0 +1,25 @@
+[project]
+name = "pingouins"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "sqlalchemy>=2.0",
+    "psycopg[binary]",
+    "fastapi>=0.141.1",
+    "uvicorn[standard]>=0.52.3",
+    "python-dotenv>=1.2.3",
+    "seaborn>=0.13.2",
+    "palmerpenguins>=0.1.6",
+    "scikit-learn>=1.9.0",
+    "joblib>=1.5.3",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+]
+
+[tool.coverage.run]
+omit = ["creer.py", "conftest.py", "test_*.py"]
