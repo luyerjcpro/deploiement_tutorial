@@ -18,6 +18,9 @@ class Penguin(Base):
     body_mass_g: Mapped[float | None]
     sex: Mapped[str | None]
 
+# toutes les tables sont enregistrées dans Base.metadata comme
+# un catalogue que SQL Alchemy peut utiliser.
+
 # __tablename__ est le nom côté PostgreSQL. 
 # La classe s'appelle Penguin, la table penguins. Les deux noms sont indépendants.
 

@@ -2,6 +2,11 @@ from database import engine
 from models import Base, Penguin, Prediction
 
 Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
+# Cela signifie essentiellement :
+# « Prends toutes les tables enregistrées dans Base.metadata, 
+# connecte-toi à la base via engine, et crée les tables qui n'existent pas encore. »
+
 # L'URL se lit de droite à gauche : 
 # - localhost:5432 c'est le port que ton docker run a ouvert, 
 # - postgres:motdepasse c'est l'utilisateur et le mot de passe que tu as fixés, 

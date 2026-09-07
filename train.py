@@ -69,3 +69,14 @@ if __name__ == "__main__":
     modele = entrainer()
     joblib.dump(modele, MODELE_PATH)
     print(f"Modèle enregistré dans {MODELE_PATH}")
+
+
+#############
+# artefact = {
+#     "model": pipe_gb,
+#     "threshold": 0.231,
+#     "classes": le_target.classes_,
+# }
+
+# joblib.dump(artefact, "modele.joblib")
+
